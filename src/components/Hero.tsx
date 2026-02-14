@@ -9,130 +9,78 @@ import { HoverParallax } from './HoverParallax';
 export function Hero() {
     return (
         <section
-            className="relative w-full overflow-hidden hero-section"
-            style={{ height: '1012px', maxWidth: '1920px', margin: '0 auto', backgroundColor: '#FBF9ED' }}
+            className="relative w-full overflow-hidden bg-[#FBF9ED] min-h-[70vh] md:min-h-[80vh] lg:min-h-[900px] xl:min-h-[1012px]"
             data-name="Background"
         >
             {/* Radial ray background */}
             <img
                 src={bgRadial}
                 alt=""
-                className="absolute left-0 top-0 w-full h-full object-cover pointer-events-none"
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 aria-hidden="true"
             />
-            {/* White overlay at 90% opacity */}
+            {/* White overlay */}
             <div
-                className="absolute left-0 top-0 w-full h-full pointer-events-none"
-                style={{ backgroundColor: 'white', opacity: 0.9 }}
+                className="absolute inset-0 pointer-events-none bg-white/90"
                 aria-hidden="true"
             />
 
             {/* Content container */}
             <HoverParallax intensity={0.03}>
-                <div
-                    className="relative h-full hero-content"
-                    style={{ marginLeft: '62px', marginRight: '62px', maxWidth: '1796px', height: '1012px' }}
-                >
-                    {/* Left text block */}
-                    <div
-                        className="absolute hero-text-block"
-                        style={{ left: 0, top: '250px', width: '679px' }}
-                    >
-                        {/* Subtitle */}
-                        <TextRotateIn axis="y" delay={200}>
-                            <p
-                                className="uppercase hero-subtitle"
-                                style={{
-                                    fontFamily: "'Kanit', sans-serif",
-                                    fontSize: '20px',
-                                    fontWeight: 400,
-                                    lineHeight: '20px',
-                                    letterSpacing: '3px',
-                                    color: '#363636',
-                                    marginBottom: '35px',
-                                    paddingLeft: '5px',
-                                }}
-                            >
-                                Hi, WE ARE GEEKPIE
-                            </p>
-                        </TextRotateIn>
+                <div className="relative h-full px-5 md:px-10 lg:px-16 max-w-[1920px] mx-auto min-h-[inherit]">
+                    {/* Mobile: stacked layout, Desktop: side by side */}
+                    <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-0 pt-36 md:pt-44 lg:pt-[250px] pb-16 lg:pb-0">
+                        {/* Left text block */}
+                        <div className="w-full lg:max-w-[679px] z-10">
+                            {/* Subtitle */}
+                            <TextRotateIn axis="y" delay={200}>
+                                <p className="uppercase font-['Kanit'] text-sm md:text-base lg:text-xl font-normal tracking-[3px] text-[#363636] mb-6 md:mb-8 lg:mb-9 pl-1">
+                                    Hi, WE ARE GEEKPIE
+                                </p>
+                            </TextRotateIn>
 
-                        {/* Main heading */}
-                        <TextRotateIn axis="x" delay={500} duration={1000}>
-                            <div style={{ marginBottom: '0' }} className="hero-heading-wrap">
-                                <h1
-                                    className="hero-heading"
-                                    style={{
-                                        fontFamily: "'Teko', sans-serif",
-                                        fontSize: '150px',
-                                        fontWeight: 700,
-                                        lineHeight: '152px',
-                                        color: '#1A1A1A',
-                                        margin: 0,
-                                        padding: 0,
-                                        textTransform: 'uppercase',
-                                    }}
-                                >
-                                    WEB &amp; APP{' '}
+                            {/* Main heading */}
+                            <TextRotateIn axis="x" delay={500} duration={1000}>
+                                <h1 className="font-['Teko'] font-bold uppercase text-[#1A1A1A] text-[clamp(48px,10vw,150px)] leading-[1.02] m-0 p-0">
+                                    WEB &amp; APP
                                     <br />
                                     DEVELOPMENT
                                     <br />
-                                    <span style={{ color: '#FF6B35' }}>AGENCY</span>
+                                    <span className="text-[#FF6B35]">AGENCY</span>
                                 </h1>
-                            </div>
-                        </TextRotateIn>
+                            </TextRotateIn>
 
-                        {/* CTA Arrow Button */}
-                        <div style={{ marginTop: '19px' }}>
-                            <MagneticButton>
-                                <SpotlightButton
-                                    style={{ borderRadius: '100px' }}
-                                    color="rgba(255,255,255,0.25)"
-                                >
-                                    <a
-                                        href="#about"
-                                        className="flex items-center justify-center btn-hover-invert hero-cta"
-                                        style={{
-                                            width: '86px',
-                                            height: '86px',
-                                            borderRadius: '100px',
-                                            backgroundColor: '#FF6B35',
-                                            cursor: 'pointer',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            overflow: 'hidden',
-                                        }}
-                                        aria-label="Learn more"
+                            {/* CTA Arrow Button */}
+                            <div className="mt-5">
+                                <MagneticButton>
+                                    <SpotlightButton
+                                        style={{ borderRadius: '100px' }}
+                                        color="rgba(255,255,255,0.25)"
                                     >
-                                        <img
-                                            src={arrowIcon}
-                                            alt=""
-                                            style={{ width: '23px', height: '22px' }}
-                                        />
-                                    </a>
-                                </SpotlightButton>
-                            </MagneticButton>
+                                        <a
+                                            href="#about"
+                                            className="flex items-center justify-center rounded-full bg-[#FF6B35] cursor-pointer overflow-hidden w-16 h-16 md:w-20 md:h-20 lg:w-[86px] lg:h-[86px]"
+                                            aria-label="Learn more"
+                                        >
+                                            <img
+                                                src={arrowIcon}
+                                                alt=""
+                                                className="w-5 h-5 md:w-[23px] md:h-[22px]"
+                                            />
+                                        </a>
+                                    </SpotlightButton>
+                                </MagneticButton>
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Right - Play Video SVG illustration */}
-                    <div
-                        className="absolute parallax-item hero-illustration"
-                        data-parallax-depth="1.5"
-                        style={{
-                            right: 0,
-                            top: '250px',
-                            width: '916px',
-                            height: '605px',
-                        }}
-                    >
-                        <img
-                            src={playVideoSvg}
-                            alt="Web and app development illustration"
-                            className="w-full h-full"
-                            style={{ objectFit: 'contain' }}
-                        />
+                        {/* Right - Play Video SVG illustration */}
+                        <div className="hidden lg:block lg:flex-1 lg:max-w-[916px] lg:ml-auto">
+                            <img
+                                src={playVideoSvg}
+                                alt="Web and app development illustration"
+                                className="w-full h-auto object-contain"
+                            />
+                        </div>
                     </div>
                 </div>
             </HoverParallax>
