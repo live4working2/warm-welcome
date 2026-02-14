@@ -13,380 +13,117 @@ import { SpotlightButton } from './SpotlightButton';
 
 export function AboutCompany() {
     return (
-        <section
-            className="relative w-full overflow-hidden about-company-section"
-            style={{
-                maxWidth: '1920px',
-                margin: '0 auto',
-                backgroundColor: '#FFFFFF',
-                paddingTop: '0',
-                paddingBottom: '0',
-            }}
-        >
-            <div
-                className="relative about-company-inner"
-                style={{
-                    marginLeft: '200px',
-                    marginRight: '200px',
-                    maxWidth: '1520px',
-                }}
-            >
+        <section className="relative w-full overflow-hidden bg-white max-w-[1920px] mx-auto">
+            <div className="relative px-5 md:px-10 lg:px-16 xl:px-[200px] max-w-[1920px] mx-auto">
                 {/* Main content area */}
-                <div className="flex about-company-flex" style={{ paddingTop: '160px' }}>
-                    {/* Left column - vertical border + image + years counter */}
-                    <div
-                        className="relative shrink-0 about-company-left"
-                        style={{
-                            width: '376px',
-                            borderRight: '1px solid #D5D5D5',
-                        }}
-                    >
+                <div className="flex flex-col lg:flex-row pt-20 md:pt-28 lg:pt-40 pb-10">
+                    {/* Left column - image + years counter */}
+                    <div className="relative shrink-0 w-full lg:w-[300px] xl:w-[376px] lg:border-r border-[#D5D5D5] mb-12 lg:mb-0 lg:pr-8">
                         {/* Office photo */}
-                        <div
-                            className="about-company-photo"
-                            style={{
-                                width: '309px',
-                                height: '353px',
-                                borderRadius: '27px',
-                                overflow: 'hidden',
-                            }}
-                        >
+                        <div className="w-full max-w-[309px] aspect-[309/353] rounded-3xl overflow-hidden">
                             <img
                                 src={imgImage}
                                 alt="Office"
-                                style={{
-                                    width: '142.54%',
-                                    height: '503px',
-                                    objectFit: 'cover',
-                                    marginTop: '-150px',
-                                }}
+                                className="w-full h-full object-cover"
                             />
                         </div>
 
-                        {/* 1+ Years Experience counter */}
-                        <div
-                            style={{
-                                borderTop: '1px solid #D5D5D5',
-                                marginTop: '67px',
-                                paddingTop: '30px',
-                                paddingLeft: '20px',
-                            }}
-                        >
-                            <div className="flex items-end baseline" style={{ gap: '12px' }}>
-                                <span
-                                    className="about-company-counter-num"
-                                    style={{
-                                        fontFamily: "'Teko', sans-serif",
-                                        fontSize: '180px',
-                                        fontWeight: 400,
-                                        lineHeight: '90px',
-                                        letterSpacing: '-9px',
-                                        color: '#FF6B35',
-                                    }}
-                                >
+                        {/* Years Experience counter */}
+                        <div className="border-t border-[#D5D5D5] mt-12 lg:mt-16 pt-6 lg:pt-8 pl-2 lg:pl-5">
+                            <div className="flex items-end gap-3">
+                                <span className="font-['Teko'] text-[clamp(80px,12vw,180px)] font-normal leading-[0.5] tracking-tighter text-[#FF6B35]">
                                     <AnimatedCounter value={15} />
                                 </span>
-                                <span
-                                    style={{
-                                        fontFamily: "'Teko', sans-serif",
-                                        fontSize: '58px',
-                                        fontWeight: 400,
-                                        lineHeight: '58px',
-                                        letterSpacing: '-9px',
-                                        color: '#1A1A1A',
-                                        marginBottom: '100px',
-                                    }}
-                                >
+                                <span className="font-['Teko'] text-4xl lg:text-[58px] font-normal leading-none tracking-tighter text-[#1A1A1A] mb-8 lg:mb-24">
                                     +
                                 </span>
-                                <p
-                                    style={{
-                                        fontFamily: "'Kanit', sans-serif",
-                                        fontSize: '28px',
-                                        fontWeight: 500,
-                                        lineHeight: '32px',
-                                        letterSpacing: '-0.56px',
-                                        color: '#121212',
-                                        marginTop: '0px',
-                                        paddingLeft: '0px',
-                                    }}
-                                >
+                                <p className="font-['Kanit'] text-xl lg:text-[28px] font-medium leading-tight tracking-tight text-[#121212]">
                                     Years{' '}
-                                    <span style={{ color: '#FF6B35' }}>Experience</span>
+                                    <span className="text-[#FF6B35]">Experience</span>
                                 </p>
                             </div>
-
                         </div>
                     </div>
 
                     {/* Right column */}
-                    <div
-                        className="relative about-company-right-content"
-                        style={{
-                            marginLeft: '61px',
-                            flex: 1,
-                            maxWidth: '1083px',
-                        }}
-                    >
+                    <div className="relative flex-1 lg:ml-8 xl:ml-16 max-w-[1083px]">
                         {/* Top row: heading + arrow decoration */}
-                        <div className="relative" style={{ marginBottom: '0' }}>
-                            {/* ABOUT COMPANY label */}
+                        <div className="relative mb-0">
                             <TextRotateIn axis="y" delay={100}>
-                                <p
-                                    style={{
-                                        fontFamily: "'Kanit', sans-serif",
-                                        fontSize: '16px',
-                                        fontWeight: 400,
-                                        lineHeight: '16px',
-                                        letterSpacing: '1.6px',
-                                        color: '#4B4B4B',
-                                        textTransform: 'uppercase',
-                                        marginBottom: '25px',
-                                    }}
-                                >
+                                <p className="font-['Kanit'] text-sm md:text-base font-normal tracking-[1.6px] text-[#4B4B4B] uppercase mb-6">
                                     ABOUT COMPANY
                                 </p>
                             </TextRotateIn>
 
-                            {/* Watermark heading */}
-                            <div className="about-company-heading">
+                            <div>
                                 <ScrollTextReveal
                                     lines={['Building relationship', 'with our clients through', 'INNOVATIVE SOLUTIONS']}
                                     style={{
                                         fontFamily: "'Teko', sans-serif",
-                                        fontSize: '84px',
+                                        fontSize: 'clamp(36px, 5vw, 84px)',
                                         fontWeight: 600,
-                                        lineHeight: '76px',
+                                        lineHeight: '0.91',
                                         color: '#121212',
                                         textTransform: 'uppercase',
-                                        whiteSpace: 'nowrap',
                                     }}
                                 />
                             </div>
 
-                            {/* Large orange arrow decoration (top right) */}
-                            <div
-                                className="absolute"
-                                style={{
-                                    top: '0',
-                                    right: '-80px',
-                                    width: '115px',
-                                    height: '115px',
-                                }}
-                            >
-                                {/* Orange filled arrow */}
-                                <img
-                                    src={arrowOrange}
-                                    alt=""
-                                    aria-hidden="true"
-                                    style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
-                                />
-                                {/* Outlined arrow (offset) */}
-                                <img
-                                    src={arrowDiagonal}
-                                    alt=""
-                                    aria-hidden="true"
-                                    style={{ width: '117px', height: '115px', position: 'absolute', top: '8px', left: '9px' }}
-                                />
+                            {/* Large orange arrow decoration */}
+                            <div className="absolute top-0 right-0 w-20 h-20 lg:w-[115px] lg:h-[115px] hidden md:block">
+                                <img src={arrowOrange} alt="" aria-hidden="true" className="w-full h-full absolute top-0 left-0" />
+                                <img src={arrowDiagonal} alt="" aria-hidden="true" className="w-full h-full absolute top-2 left-2" />
                             </div>
                         </div>
 
-                        {/* Bottom row: text + second image + WhatsApp badge */}
-                        <div
-                            className="relative flex"
-                            style={{ marginTop: '40px' }}
-                        >
+                        {/* Bottom row: text + second image */}
+                        <div className="relative flex flex-col md:flex-row mt-8 lg:mt-10 gap-8 lg:gap-16">
                             {/* Body text + CTA button */}
-                            <div style={{ width: '626px', paddingLeft: '3px' }}>
-                                <div style={{ paddingTop: '50px', paddingLeft: '72px' }}>
-                                    <TextFadeIn direction="up" delay={200}>
-                                        <div
-                                            style={{
-                                                fontFamily: "'Kanit', sans-serif",
-                                                fontSize: '18px',
-                                                fontWeight: 400,
-                                                lineHeight: '27px',
-                                                color: '#5F5F5F',
-                                                textAlign: 'justify',
-                                            }}
-                                        >
-                                            <p style={{ margin: '0 0 27px 0' }}>
-                                                At GeekPie we have a team of experts with a wide range of specialized skills in web development, mobile apps, and custom AI agents.
-                                            </p>
-                                            <p style={{ margin: 0 }}>
-                                                We create intelligent solutions for real estate, finance, education, and more.
-                                            </p>
-                                        </div>
-                                    </TextFadeIn>
-
-                                    {/* Let's Collaborate button */}
-                                    <div style={{ marginTop: '50px' }}>
-                                        <MagneticButton>
-                                            <SpotlightButton
-                                                style={{ borderRadius: '100px' }}
-                                                color="rgba(255,255,255,0.25)"
-                                            >
-                                                <a
-                                                    href="#contact"
-                                                    className="relative inline-flex items-center cursor-pointer group wobble-hover btn-hover-invert-group"
-                                                    style={{ textDecoration: 'none' }}
-                                                >
-                                                    <div
-                                                        className="flex items-center justify-center"
-                                                        style={{
-                                                            height: '60px',
-                                                            backgroundColor: '#FF6B35',
-                                                            borderRadius: '100px',
-                                                            paddingLeft: '49.5px',
-                                                            paddingRight: '49.5px',
-                                                        }}
-                                                    >
-                                                        <span
-                                                            style={{
-                                                                fontFamily: "'Inter', sans-serif",
-                                                                fontSize: '14px',
-                                                                fontWeight: 500,
-                                                                lineHeight: '14px',
-                                                                color: '#121212',
-                                                                whiteSpace: 'nowrap',
-                                                            }}
-                                                        >
-                                                            Let's Collaborate
-                                                        </span>
-                                                    </div>
-                                                    <div
-                                                        className="flex items-center justify-center"
-                                                        style={{
-                                                            width: '60px',
-                                                            height: '60px',
-                                                            backgroundColor: '#FF6B35',
-                                                            borderRadius: '30px',
-                                                            marginLeft: '-1px',
-                                                        }}
-                                                    >
-                                                        <img
-                                                            src={arrowSmall}
-                                                            alt=""
-                                                            style={{ width: '15.5px', height: '15.5px' }}
-                                                        />
-                                                    </div>
-                                                </a>
-                                            </SpotlightButton>
-                                        </MagneticButton>
+                            <div className="flex-1 md:pt-8 lg:pt-12 md:pl-4 lg:pl-[72px]">
+                                <TextFadeIn direction="up" delay={200}>
+                                    <div className="font-['Kanit'] text-base lg:text-lg font-normal leading-relaxed text-[#5F5F5F] text-justify">
+                                        <p className="mb-6">
+                                            At GeekPie we have a team of experts with a wide range of specialized skills in web development, mobile apps, and custom AI agents.
+                                        </p>
+                                        <p className="m-0">
+                                            We create intelligent solutions for real estate, finance, education, and more.
+                                        </p>
                                     </div>
+                                </TextFadeIn>
+
+                                {/* Let's Collaborate button */}
+                                <div className="mt-8 lg:mt-12">
+                                    <MagneticButton>
+                                        <SpotlightButton style={{ borderRadius: '100px' }} color="rgba(255,255,255,0.25)">
+                                            <a href="#contact" className="relative inline-flex items-center cursor-pointer no-underline">
+                                                <div className="flex items-center justify-center h-12 lg:h-[60px] bg-[#FF6B35] rounded-full px-8 lg:px-12">
+                                                    <span className="font-['Inter'] text-sm font-medium text-[#121212] whitespace-nowrap">
+                                                        Let's Collaborate
+                                                    </span>
+                                                </div>
+                                                <div className="flex items-center justify-center w-12 h-12 lg:w-[60px] lg:h-[60px] bg-[#FF6B35] rounded-full -ml-px">
+                                                    <img src={arrowSmall} alt="" className="w-4 h-4" />
+                                                </div>
+                                            </a>
+                                        </SpotlightButton>
+                                    </MagneticButton>
                                 </div>
                             </div>
 
                             {/* Second photo */}
-                            <div
-                                style={{
-                                    width: '309px',
-                                    height: '353px',
-                                    borderRadius: '27px',
-                                    overflow: 'hidden',
-                                    marginLeft: '72px',
-                                }}
-                            >
-                                <img
-                                    src={imgImage1}
-                                    alt="Team collaboration"
-                                    style={{
-                                        width: '142.54%',
-                                        height: '503px',
-                                        objectFit: 'cover',
-                                    }}
-                                />
+                            <div className="w-full max-w-[309px] aspect-[309/353] rounded-3xl overflow-hidden shrink-0">
+                                <img src={imgImage1} alt="Team collaboration" className="w-full h-full object-cover" />
                             </div>
+                        </div>
 
-                            {/* WhatsApp circular badge with rotating text */}
-                            <div
-                                className="absolute"
-                                style={{
-                                    right: '-17px',
-                                    top: '-90px',
-                                    width: '200.62px',
-                                    height: '200.62px',
-                                }}
-                            >
-
-
-                                {/* Center image */}
-                                <div
-                                    className="flex items-center justify-center"
-                                    style={{
-                                        position: 'absolute',
-                                        top: '50%',
-                                        left: '50%',
-                                        transform: 'translate(-50%, -50%)',
-                                        width: '200px',
-                                        height: '200px',
-                                        borderRadius: '50%',
-                                        backgroundColor: 'white',
-                                    }}
-                                >
-                                    <img
-                                        src={imgWhatsApp}
-                                        alt="GeekPie Web and App Development Agency"
-                                        style={{
-                                            // marginTop: '40px',
-                                            width: '150px',
-                                            height: '150px',
-                                            objectFit: 'cover',
-                                            // borderRadius: '50%',
-                                        }}
-                                    />
-                                </div>
-
-                                {/* Rotating text ring */}
-                                <svg
-                                    viewBox="0 0 200 200"
-                                    style={{
-                                        position: 'absolute',
-                                        top: 0,
-                                        left: 0,
-                                        width: '100%',
-                                        height: '100%',
-                                        animation: 'spinText 12s linear infinite',
-                                    }}
-                                >
-                                    <defs>
-                                        <path
-                                            id="circlePath"
-                                            d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
-                                        />
-                                    </defs>
-                                    <text
-                                        style={{
-                                            fontFamily: "'Kanit', sans-serif",
-                                            fontSize: '20px',
-                                            fontWeight: 900,
-                                            letterSpacing: '1.2px',
-                                            textTransform: 'uppercase',
-                                            fill: '#FF6B35',
-                                            stroke: '#000000',
-                                            strokeWidth: 0.6,
-                                        }}
-                                    >
-                                        <textPath href="#circlePath" startOffset="0%">
-                                            <tspan fill="#FF6B35">GEEKPIE</tspan>{' '}
-                                            <tspan fill="#FFFFFF">WEB</tspan>{' '}
-                                            <tspan fill="#FF6B35">AND</tspan>{' '}
-                                            <tspan fill="#FFFFFF">APP</tspan>{' '}
-                                            <tspan fill="#FF6B35">DEVELOPMENT</tspan>{' '}
-                                            <tspan fill="#FFFFFF">AGENCY</tspan>{' '}
-                                            <tspan fill="#FF6B35">•</tspan>
-                                        </textPath>
-                                    </text>
-                                </svg>
-
-
-                                {/* Keyframes for rotation */}
-                                <style>{`
-                                    @keyframes spinText {
-                                        from { transform: rotate(0deg); }
-                                        to { transform: rotate(360deg); }
-                                    }
-                                `}</style>
+                        {/* WhatsApp circular badge */}
+                        <div className="absolute -right-4 -top-16 lg:-top-24 w-32 h-32 lg:w-[200px] lg:h-[200px] hidden lg:block">
+                            <div className="flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full bg-white">
+                                <img
+                                    src={imgWhatsApp}
+                                    alt="GeekPie Web and App Development Agency"
+                                    className="w-3/4 h-3/4 object-cover"
+                                />
                             </div>
                         </div>
                     </div>

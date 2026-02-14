@@ -28,48 +28,22 @@ const teamMembers: TeamMember[] = [
 function TeamCard({ member }: { member: TeamMember }) {
     return (
         <Tilt3D max={8} perspective={1200}>
-            <div
-                className="team-card"
-                style={{
-                    width: '419.98px',
-                    backgroundColor: 'white',
-                    overflow: 'hidden',
-                }}
-            >
+            <div className="bg-white overflow-hidden w-full">
                 {/* Portrait photo */}
-                <ImageParallaxHover className="team-card-photo" style={{ width: '419.98px', height: '572.22px' }}>
+                <ImageParallaxHover className="w-full aspect-[3/4]">
                     <img
                         src={member.image}
                         alt={member.name}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        className="w-full h-full object-cover"
                     />
                 </ImageParallaxHover>
 
                 {/* Name and role */}
-                <div style={{ paddingTop: '43px', paddingRight: '32px', textAlign: 'center' }}>
-                    <p
-                        style={{
-                            fontFamily: "'Teko', sans-serif",
-                            fontSize: '32px',
-                            fontWeight: 500,
-                            lineHeight: '34px',
-                            color: '#121212',
-                            textTransform: 'uppercase',
-                            margin: 0,
-                        }}
-                    >
+                <div className="pt-6 lg:pt-10 text-center pb-4">
+                    <p className="font-['Teko'] text-xl md:text-2xl lg:text-[32px] font-medium leading-tight text-[#121212] uppercase m-0">
                         {member.name}
                     </p>
-                    <p
-                        style={{
-                            fontFamily: "'Kanit', sans-serif",
-                            fontSize: '18px',
-                            fontWeight: 300,
-                            lineHeight: '26px',
-                            color: '#555555',
-                            margin: '18px 0 0 0',
-                        }}
-                    >
+                    <p className="font-['Kanit'] text-sm md:text-base lg:text-lg font-light text-[#555555] mt-3 lg:mt-4 m-0">
                         {member.role}
                     </p>
                 </div>
@@ -80,100 +54,41 @@ function TeamCard({ member }: { member: TeamMember }) {
 
 export function Team() {
     return (
-        <section
-            style={{
-                backgroundColor: '#F2EDEA',
-                maxWidth: '1920px',
-                margin: '0 auto',
-                overflow: 'hidden',
-                position: 'relative',
-            }}
-        >
-            {/* Content container */}
-            <div
-                style={{
-                    marginLeft: '163px',
-                    paddingTop: '137px',
-                    paddingBottom: '100px',
-                    maxWidth: '1594px',
-                }}
-                className="team-inner"
-            >
+        <section className="bg-[#F2EDEA] max-w-[1920px] mx-auto overflow-hidden relative">
+            <div className="px-5 md:px-10 lg:px-16 max-w-[1594px] mx-auto py-20 md:py-28 lg:py-36">
                 {/* Header */}
-                <div className="team-header" style={{ marginLeft: '381px', maxWidth: '832px', marginBottom: '100px' }}>
-                    {/* Label */}
+                <div className="mb-12 md:mb-16 lg:mb-24 max-w-[832px] mx-auto lg:mx-0 lg:ml-[20%] xl:ml-[381px]">
                     <TextRotateIn axis="y" delay={100}>
-                        <p
-                            style={{
-                                fontFamily: "'Kanit', sans-serif",
-                                fontSize: '16px',
-                                fontWeight: 400,
-                                lineHeight: '16px',
-                                letterSpacing: '1.6px',
-                                color: '#121212',
-                                textTransform: 'uppercase',
-                                margin: '0 0 45px 0',
-                            }}
-                        >
+                        <p className="font-['Kanit'] text-sm md:text-base font-normal tracking-[1.6px] text-[#121212] uppercase mb-8 lg:mb-11">
                             OUR TEAM
                         </p>
                     </TextRotateIn>
 
-                    {/* Watermark heading */}
-                    <div className="team-heading">
-                        <ScrollTextReveal
-                            lines={['MEET OUR incredible Team', 'of great minds']}
-                            style={{
-                                fontFamily: "'Teko', sans-serif",
-                                fontSize: '84px',
-                                fontWeight: 600,
-                                lineHeight: '76px',
-                                color: '#121212',
-                                textTransform: 'uppercase',
-                            }}
-                        />
-                    </div>
+                    <ScrollTextReveal
+                        lines={['MEET OUR incredible Team', 'of great minds']}
+                        style={{
+                            fontFamily: "'Teko', sans-serif",
+                            fontSize: 'clamp(36px, 5vw, 84px)',
+                            fontWeight: 600,
+                            lineHeight: '0.91',
+                            color: '#121212',
+                            textTransform: 'uppercase',
+                        }}
+                    />
                 </div>
 
-                {/* Team grid - staggered 3x2 */}
-                <div style={{ position: 'relative' }}>
-                    {/* Row 1 */}
-                    <div className="flex team-grid-row" style={{ gap: '167px', marginLeft: '0' }}>
-                        <div style={{ marginTop: '0' }}>
-                            <ScrollReveal delay={0}>
-                                <TeamCard member={teamMembers[0]} />
+                {/* Team grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 xl:gap-24">
+                    {teamMembers.map((member, i) => (
+                        <div
+                            key={member.name}
+                            className={i % 2 === 1 ? 'lg:mt-20 xl:mt-[150px]' : ''}
+                        >
+                            <ScrollReveal delay={i * 100}>
+                                <TeamCard member={member} />
                             </ScrollReveal>
                         </div>
-                        <div className="team-stagger" style={{ marginTop: '150px' }}>
-                            <ScrollReveal delay={200}>
-                                <TeamCard member={teamMembers[1]} />
-                            </ScrollReveal>
-                        </div>
-                        <div style={{ marginTop: '0' }}>
-                            <ScrollReveal delay={400}>
-                                <TeamCard member={teamMembers[2]} />
-                            </ScrollReveal>
-                        </div>
-                    </div>
-
-                    {/* Row 2 */}
-                    <div className="flex team-grid-row team-row-2" style={{ gap: '167px', marginLeft: '0', marginTop: '50px' }}>
-                        <div style={{ marginTop: '0' }}>
-                            <ScrollReveal delay={0}>
-                                <TeamCard member={teamMembers[3]} />
-                            </ScrollReveal>
-                        </div>
-                        <div style={{ marginTop: '150px' }}>
-                            <ScrollReveal delay={200}>
-                                <TeamCard member={teamMembers[4]} />
-                            </ScrollReveal>
-                        </div>
-                        <div style={{ marginTop: '0' }}>
-                            <ScrollReveal delay={400}>
-                                <TeamCard member={teamMembers[5]} />
-                            </ScrollReveal>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>
