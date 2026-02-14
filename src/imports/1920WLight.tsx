@@ -549,7 +549,7 @@ function Container46() {
 function Background1() {
   return (
     <div className="bg-[#ff6b35] content-stretch flex h-full items-center justify-center pb-[23.5px] pt-[22.5px] px-[49.5px] relative rounded-[100px] shrink-0" data-name="Background">
-      <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#121212] text-[0px] text-center whitespace-nowrap" role="link" tabIndex="0">
+      <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#121212] text-[0px] text-center whitespace-nowrap" role="link" tabIndex={0}>
         <p className="cursor-pointer leading-[14px] text-[14px]">Let’s Collaborate</p>
       </div>
     </div>
@@ -2099,7 +2099,7 @@ function Container156() {
 function Background7() {
   return (
     <div className="bg-[#121212] content-stretch flex h-full items-center justify-center pb-[18.61px] pt-[17.39px] px-[34px] relative rounded-[100px] shrink-0" data-name="Background">
-      <div className="flex flex-col font-['Kanit:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[11.2px] text-center text-white whitespace-nowrap" role="link" tabIndex="0">
+      <div className="flex flex-col font-['Kanit:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[11.2px] text-center text-white whitespace-nowrap" role="link" tabIndex={0}>
         <p className="cursor-pointer leading-[11.2px]">View Project Details</p>
       </div>
     </div>
@@ -6375,7 +6375,7 @@ function Background25() {
 function Container373() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Kanit',sans-serif] font-light justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-left text-white whitespace-nowrap" role="link" tabIndex="0">
+      <div className="flex flex-col font-['Kanit',sans-serif] font-light justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-left text-white whitespace-nowrap" role="link" tabIndex={0}>
         <p className="cursor-pointer leading-[26px] text-[16px]">Facebook</p>
       </div>
     </div>
